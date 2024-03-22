@@ -35,7 +35,7 @@ function limpardados (){
 
 <template>
   <form>
-  <div class="row">
+  <div class="forms">
     <div class="col">
       <input type="text" v-bind:value="email" v-on:input="event => email = event.target.value" class="form-control"
           placeholder="Enter email" name="email ">
@@ -97,10 +97,11 @@ function limpardados (){
   </div>
 
 </form>
+<br>
 
+<button class="dadosUsu"  @click="limpardados"> limpar dados</button>
+<button class="dadosUsu1" v-on:click="botaoDados = true ">mostrar dados do usuario</button>
 
-<button v-on:click="botaoDados = true ">mostrar dados do usuario</button>
-<button @click="limpardados"> limpar dados</button>
 
 <div v-if = "botaoDados" >
 <h4>dados usuario</h4>
@@ -120,5 +121,22 @@ function limpardados (){
 </template>
 
 <style scoped>
+.form{
+  
+}
+
+.dadosUsu{
+  width: 30%;
+  height: 30px;
+  font-size: 10px;
+}
+
+.dadosUsu1{
+  width: 30%;
+  height: 30px;
+  font-size: 10px;
+  margin-left: -70%;
+}
+
 
 </style>
