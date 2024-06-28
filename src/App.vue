@@ -34,24 +34,27 @@ function limpardados (){
 </script>
 
 <template>
+  
+  <div class="container">
+    
   <form>
   <div class="forms">
     <div class="col">
       <input type="text" v-bind:value="email" v-on:input="event => email = event.target.value" class="form-control"
           placeholder="Enter email" name="email ">
         <input type="text" v-bind:value="nome" v-on:input="event => nome = event.target.value" class="form-control"
-          placeholder="insira seu nome">
+          placeholder="Insira seu nome">
         <input type="text" v-bind:value="dataN" v-on:input="event => dataN = event.target.value" class="form-control"
-          placeholder="insira sua data de nascimento">
+          placeholder="Insira sua data de nascimento">
         <input type="text" v-bind:value="endereço" v-on:input="event => endereço = event.target.value"
-          class="form-control" placeholder="insira seu endereço">
+          class="form-control" placeholder="Insira seu endereço">
         <input type="text" v-bind:value="cidade" v-on:input="event => cidade = event.target.value" class="form-control"
-          placeholder="insira sua cidade">
+          placeholder="Insira sua cidade">
+          <br>
      
-
-      <h6>insira seu Estado</h6>
-
-     <select v-bind:value="estado" v-on:input="event => estado = event.target.value" class="form-select mt-3">
+<div class="select">
+<h6 class="title">INSIRA SEU ESTADO ABAIXO:</h6>
+     <select v-bind:value="estado" v-on:input="event => estado = event.target.value"  class="form-select mt-3"> 
      <option>AC</option>
      <option>AL</option>
      <option>AP</option>
@@ -80,6 +83,7 @@ function limpardados (){
      <option>SE</option>
      <option>TO</option>
    </select>
+  </div>
    <input type="text" v-bind:value="Hobbies" v-on:input="event => Hobbies = event.target.value" class="form-control" placeholder="insira seus Hobbies
 ">
    <input type="text" v-bind:value="Linguagens" v-on:input="event => Linguagens = event.target.value" class="form-control" placeholder="insira suas Linguagens de programação
@@ -92,19 +96,19 @@ function limpardados (){
       <input type="password" v-bind:value="senha" v-on:input="event => senha = event.target.value" class="form-control" placeholder="insira sua senha" name="pswd">
       <input type="password" v-bind:value="confirmaçao" v-on:input="event => confirmaçao = event.target.value" class="form-control" placeholder="confirmaçao de senha" name="pswd">
 
-      
+        <div class="bt1">
+      <button class="btn btn-danger"  @click="limpardados"> limpar dados</button>
     </div>
-  </div>
+    <div class="bt2">
+<button class="btn btn-success" v-on:click="botaoDados = true ">mostrar dados do usuario</button>
+</div>
+</div>
+    </div>
 
 </form>
-<br>
-
-<button class="dadosUsu"  @click="limpardados"> limpar dados</button>
-<button class="dadosUsu1" v-on:click="botaoDados = true ">mostrar dados do usuario</button>
-
-
+</div>
 <div v-if = "botaoDados" >
-<h4>dados usuario</h4>
+<h4>Dados usuario</h4>
     <p>email digitado: {{ email }}</p>
 <p>nome digitado:{{ nome }}</p>
 <p>data de nascimento digitado:{{ dataN }}</p>
@@ -121,14 +125,33 @@ function limpardados (){
 </template>
 
 <style scoped>
-.form{
-  
+.bt1{
+  margin-left: 60%;
+  margin-top: 10%;
+  align-content: center;
 }
+.bt2{
+  margin-left:5%;
+  margin-top:-6.5%;
+  align-content: center;
+}
+.forms{
+  background-color: blue;
+  width: 45vw;
+    min-height: 90vh;
+    border-radius: 20px;
+    padding: 40px;
+    
+}
+
 
 .dadosUsu{
   width: 30%;
   height: 30px;
   font-size: 10px;
+  margin-left: 50%;
+  margin-top: 15%;
+  
 }
 
 .dadosUsu1{
@@ -137,6 +160,20 @@ function limpardados (){
   font-size: 10px;
   margin-left: -70%;
 }
-
-
+.container{
+  display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-left: 35%;
+}
+.title{
+  text-decoration-color: azure;
+}
+.select {
+  align-items: center;
+  text-align: center;
+  color: aliceblue;
+  
+}
 </style>
